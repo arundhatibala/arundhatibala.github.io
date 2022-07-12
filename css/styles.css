@@ -1,10 +1,36 @@
 body {
-    background-color: ghostwhite;
+    --bs-highlight-bg: rgba(0, 0, 0 , 0 )
 }
+
+@font-face {
+    font-family: "SF Display";
+    font-weight: 400;
+    src :url('../fonts/SFUIDisplay-Regular.otf')}
+@font-face {
+    font-family: "SF Display";
+    font-weight: 500;
+    src :url('../fonts/SFUIDisplay-Medium.otf')}
+@font-face {
+    font-family: "SF Display";
+    font-weight: 300;
+    src :url('../fonts/SFUIDisplay-Light.ttf')}
+@font-face {
+    font-family: "SF Text";
+    font-weight: 400;
+    src :url('../fonts/SFUIText-Regular.otf')}
+@font-face {
+    font-family: "SF Text";
+    font-weight: 500;
+    src :url('../fonts/SFUIText-Medium.otf')}
+    @font-face {
+    font-family: "SF Text";
+    font-weight: 300;
+    src :url('../fonts/SFUIText-Light.otf')}
+
+
 
 .title {
   display: flex;
-  align-items: center;
   height: 80vh;
 }
 
@@ -35,7 +61,7 @@ body {
 
 .link--ersa {
     padding: 0 10px;
-    font-family: halyard-display, sans-serif;
+    font-family: 'SF Display', sans-serif;
     letter-spacing: 1px;
     text-indent: 1px;
     /* text-transform: uppercase; */
@@ -68,7 +94,65 @@ body {
     transform: scale3d(1.1, 1.1, 1.1);
 }
 
-.active {
-    text-decoration:line-through;
+
+h1, h2, h4, p {
+    font-family: 'SF Display', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
+.nav-link {
+    font-family: 'SF Display', sans-serif;
+}
+
+
+  .mark, mark {
+    background: #f9fafb;
+    
+  }
+  
+  mark {
+    -webkit-animation: 1s highlight 1s 1 normal forwards;
+            animation: 1s highlight 1s 1 normal forwards;
+    background: linear-gradient(90deg, #ffa664 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+  }
+  
+  @-webkit-keyframes highlight {
+    to {
+      background-position: 0 0;
+    }
+  }
+  
+  @keyframes highlight {
+    to {
+      background-position: 0 0;
+    }
+  }
+
+  p {
+      font-family: 'SF Text';
+  }
+
+
+
+
+
+  .container {
+    padding-top: 5vh;
+}
+
+.col {
+    display: flex;
+    
+}
+
+h1 {
+    width: 100%;
+}
+
+h4 {
+    width: 100%;
+    padding-top : 5px;
+}
