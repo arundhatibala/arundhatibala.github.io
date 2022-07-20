@@ -1,3 +1,7 @@
+html, body {
+    background-color: #181a24;
+}
+
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {
@@ -59,9 +63,12 @@
     /* show by default */
 }
 .link--kale {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+    font-family: Helvetica Neue, sans-serif;
+    font-weight:400;
+    color: #eee;
+    text-decoration: none;
     text-transform: lowercase;
+    padding: 5px;
 }
 
 .link--kale::before {
@@ -104,6 +111,11 @@
     transition-delay: 0s;
 }
 
+.link:hover {
+    color: #eee;
+    text-decoration: none;
+}
+
 .link--kale:hover::after {
     opacity: 1;
     transition-delay: 0.3s;
@@ -112,4 +124,6 @@
 .link-active {
     color: black;
 }
+
+
 /* Links */

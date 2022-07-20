@@ -1,5 +1,7 @@
 import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 const Header = () => {
 return (
@@ -7,11 +9,12 @@ return (
     <Navbar bg="transparent" variant="light" sticky="top">
         <Container>
         <Nav className="me-auto">
-            <Nav.Link className = "link link--kale" href="/">Arundhati Balasubramaniam</Nav.Link>
+          <Link to = "/" className = "link link--kale">arundhati balasubramaniam</Link>
             </Nav>          
             <Nav className="ms-auto">
-            <Nav.Link className = "link link--kale" href="/work">Work</Nav.Link>
-            <Nav.Link className = "link link--kale" href="/about">Contact</Nav.Link>
+            <Link to = "/#resume" className = "link link--kale">resume</Link>
+            <Link to = "/#work" className = "link link--kale">work</Link>
+            <Link to = "/#contact" className = "link link--kale">contact</Link>
             </Nav>
         </Container>
       </Navbar>
