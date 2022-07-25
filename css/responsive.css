@@ -2,6 +2,8 @@
 @media only screen and (max-width: 600px) {
     h1.titletext {
         padding-top: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
         font-size: 120px;
     }
 }

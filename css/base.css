@@ -2,14 +2,17 @@ html, body {
     background-color: #F5F3E7;
 }
 
+body {
+    position: relative;
+  }
+
 .navbar {
-    padding: 0;
+    width: 100%;
 }
 
 header {
     top: 0;
     position: sticky;
-    position: -webkit-sticky;
     z-index: 9999;
 }
 
@@ -22,7 +25,6 @@ header {
 
 .nav-item:hover {
     font-family: 'Humane';
-    font-size: 50px; 
     text-decoration: none; 
     color: #6AA156;
 }
@@ -42,9 +44,22 @@ header {
 
 h1.titletext {
     font-family: 'Humane';
+    color: #211e1e;
     font-weight: 500;
     letter-spacing: 0.5px;
     font-size: 200px;
+    
+}
+
+h2.titletext {
+    font-family: 'Humane';
+    color: #211e1e;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 150px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-color: #286A10;
     
 }
 
@@ -54,8 +69,17 @@ h1.titletext {
 }
 
 .work {
-    background-color: #286A10;
-    color: #F5F3E7;
+    background-color: #F5F3E7;
+    color: #211e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    background-color: #F5F3E7;
+    color: #211e1e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,10 +91,6 @@ h1.titletext {
     padding: 20px;
 }
 
-.accordion-button {
-    height: 100px;
-    background-color: #F5F3E7;
-}
 
 .accordion-header {
     font-family: 'Humane';
@@ -79,7 +99,7 @@ h1.titletext {
 
 button.accordion-collapse {
     font-size: 100px;
-    color: #000;
+    color: #211e1e;
 }
 
 .trybutton {
@@ -87,9 +107,34 @@ button.accordion-collapse {
     text-align: left;
     border: none;
     background-color: #F5F3E7;
+    color: #211e1e;
     padding: 20px;
 }
 
 .accordion-body {
-    color: #000;
+    color: #211e1e
+}
+
+.bi-music-player {
+    line-height: 1.5;
+    vertical-align: 0;
+    font-size: 50px;
+}
+
+.active {
+    color: #6AA156;
+}
+
+p {
+    width: 80%; text-align: center;
+}
+
+.bi {
+    color: #286A10;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.bi:hover {
+    color: #6AA156;
 }
