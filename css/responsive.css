@@ -6,6 +6,15 @@
         padding-left: 10px;
         font-size: 120px;
     }
+    h2.titletext {
+        padding-top: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 100px;
+    }
+    .nav-item {
+        font-size: 40px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -14,6 +23,14 @@
         padding-top: 30px;
         font-size: 150px;
     }
+    h2.titletext {
+        padding-top: 30px;
+        font-size: 120px;
+    }
+    .nav-item {
+        font-size: 40px;
+    }
+    
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -21,6 +38,13 @@
     h1.titletext {
         padding-top: 30px;
         font-size: 150px;
+    }
+    h2.titletext {
+        padding-top: 30px;
+        font-size: 120px;
+    }
+    .nav-item {
+        font-size: 50px;
     }
 }
 
@@ -30,6 +54,13 @@
         padding-top: 30px;
         font-size: 200px;
     }
+    h2.titletext {
+        padding-top: 30px;
+        font-size: 150px;
+    }
+    .nav-item {
+        font-size: 50px;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -37,5 +68,12 @@
     h1.titletext {
         padding-top: 30px;
         font-size: 250px;
+    }
+    h2.titletext {
+        padding-top: 30px;
+        font-size: 200px;
+    }
+    .nav-item {
+        font-size: 50px;
     }
 }
