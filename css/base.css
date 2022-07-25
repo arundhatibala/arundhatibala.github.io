@@ -8,12 +8,14 @@ body {
 
 .navbar {
     width: 100%;
+    padding-bottom: 0;
 }
 
 header {
     top: 0;
     position: sticky;
     z-index: 9999;
+    padding-bottom: 0;
 }
 
 .nav-item {
@@ -137,4 +139,34 @@ p {
 
 .bi:hover {
     color: #6AA156;
+}
+
+.col {
+    width: 30%;
+    height: auto;
+}
+
+figcaption {
+    padding-top:10px;
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+.col-md {
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #286A10;
+}
+a:hover{
+    color: #6AA156;
+}
+
+.accordion-body {
+    background-color: #dedbcc;
 }
