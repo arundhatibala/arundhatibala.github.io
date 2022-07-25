@@ -37,7 +37,8 @@ html, body {
 }
 
 h1.titletext {
-    font-family: 'Humane-Medium';
+    font-family: 'Humane';
+    font-weight: 500;
     letter-spacing: 0.5px;
     font-size: 200px;
     
