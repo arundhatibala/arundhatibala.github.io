@@ -3,10 +3,14 @@ html, body {
 }
 
 .navbar {
+    padding: 0;
+}
+
+header {
     top: 0;
-    left: 0;
     position: sticky;
-    z-index: 2;
+    position: -webkit-sticky;
+    z-index: 9999;
 }
 
 .nav-item {
@@ -78,43 +82,14 @@ button.accordion-collapse {
     color: #000;
 }
 
-.accordion-button {
-    font-size: 100px;
-    height: fit-content;
-    z-index: 0;
-    color: black;
-    box-shadow: none;
-}
-
-.accordion-button:active {
-    box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #F5F3E7;
-    color: black;
-    height: fit-content;
-    z-index: 0;
-    box-shadow: none;
-}
-
-.accordion-button::after {
-    color:black;
-    box-shadow: none;
-}
-
-.accordion-icon-active-color {
-    color:black;
-}
-
-.accordion-transition {
-    border-radius: .15s ease;
-}
-
 .trybutton {
     width: 100%;
     text-align: left;
     border: none;
     background-color: #F5F3E7;
     padding: 20px;
+}
+
+.accordion-body {
+    color: #000;
 }
