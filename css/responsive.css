@@ -4,13 +4,13 @@
         padding-top: 30px;
         padding-right: 10px;
         padding-left: 10px;
-        font-size: 120px;
+        font-size: 110px;
     }
     h2.titletext {
         padding-top: 30px;
         padding-right: 10px;
         padding-left: 10px;
-        font-size: 100px;
+        font-size: 90px;
     }
     .nav-item {
         font-size: 40px;
@@ -46,6 +46,12 @@
     .nav-item {
         font-size: 50px;
     }
+    .col-md {
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        height: 100px;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -61,6 +67,13 @@
     .nav-item {
         font-size: 50px;
     }
+    .col-md {
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        height: 100px;
+    }
+    
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -75,5 +88,11 @@
     }
     .nav-item {
         font-size: 50px;
+    }
+    .col-md {
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        height: 100px;
     }
 }

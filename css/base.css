@@ -157,6 +157,10 @@ img {
 
 .col-md {
     padding: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 100%;
+    background-color: #286A10;
 }
 
 a {
@@ -170,3 +174,36 @@ a:hover{
 .accordion-body {
     background-color: #dedbcc;
 }
+
+
+#overlay{
+    position:fixed;
+    z-index:9999;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(0,0,0,0.9);
+    transition: 1s 0.4s;
+  }
+  #progress{
+    height:100vh;
+    background:#286A10;
+    position:absolute;
+    width:0;
+    top:0%;
+    transition: 1s;
+  }
+  #progstat{
+    font-size:50px;
+    letter-spacing: 1px;
+    position:absolute;
+    font-family: 'Humane';
+    top:90%;
+    left: 10%;
+    margin-top:-40px;
+    width:100%;
+    text-align:left;
+    color:#F5F3E7;
+    z-index:99999;
+  }
