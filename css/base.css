@@ -9,18 +9,30 @@
 .light-mode {
   --color-bg: #ededed;
   --color-text: #171717;
+  animation: fadein2 0.5s linear;
 }
 
 .dark-mode {
   --color-bg: #171717;
   --color-text: #EDEDED;
+  animation-name: fadein1;
+  animation-duration: 0.5s;
 }
 
 html {
   scroll-behavior: smooth;
   cursor: none;
   background-color: var(--color-bg);
-  transition: background-color 1s linear;
+}
+
+@keyframes fadein1 {
+  0% { background-color: #EDEDED; }
+  100%   { background-color: #171717; }
+}
+
+@keyframes fadein2 {
+  0% { background-color: #171717; }
+  100%   { background-color: #EDEDED; }
 }
 
 
@@ -215,17 +227,6 @@ div.page {
 
 .hide {
   animation: fadeOut 2s;
-}
-
-@keyframes fadeOut {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-  
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }
 
   .inline-image {
