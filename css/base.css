@@ -258,6 +258,11 @@ div.page {
 .bi {
   font-size: 30px;
   padding: 1vh 0.5vw;
+  color: var(--color-text);
+  transition: color 0.2s linear;
+}
+
+.bi:hover {
   color: var(--highlight)
 }
 
@@ -299,3 +304,44 @@ img {
   background-color: var(--color-bg);
 }
 
+
+button, button:hover, button:active, button:focus {
+  cursor: none;
+  /* cursor: default; */
+}
+
+.btn {
+  cursor: none;
+  color: var(--highlight);
+  stroke: var(--highlight);
+}
+.btn:hover {
+  cursor:none;
+  color: var(--color-bg);
+  background-color: var(var(--highlight))
+}
+
+.btn-work {
+  cursor: none;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: none;
+}
+.btn-work:hover {
+  color: var(--highlight);
+}
+
+.tabs {
+  display: block;
+  color: var(--color-text);
+}
+
+.tabs h6 {
+  font-size: 1.5rem;
+  padding-right: 2vw;
+  color: var(--color-text);
+}
+
+.tabs h6:hover {
+  color: var(--highlight);
+}
