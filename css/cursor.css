@@ -1,0 +1,50 @@
+/* Outer Cursor Circle */
+:root {
+  --color-bg: #fff;
+  --color-text: #000;
+  --highlight: #ff0000; 
+}
+
+.light-mode {
+  --color-bg: #fff;
+  --color-text: #000;
+  --highlight: #ff0000; 
+}
+
+.dark-mode {
+  --color-bg: #171717;
+  --color-text: #EDEDED;
+  --highlight: #DA0037; 
+}
+
+.cursor--outer {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  
+  /* Inner Cursor Circle */
+  .cursor--inner {
+    width: 4px;
+    height: 4px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    z-index: 11000;
+    background:#232323;
+  }
+  
+  .link {
+    cursor: none; 
+    transition: coloring 10s ease-in-out;
+  }
