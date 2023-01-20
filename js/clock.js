@@ -5,7 +5,7 @@ function showTime(){
     var m = date.getMinutes(); // 0 - 59
     var s = date.getSeconds(); // 0 - 59
     var session = "AM";
-    var toggle = "bi-brightness-high"
+
 
     
     if(h == 0){
@@ -43,19 +43,18 @@ showTime();
 function toggleMode() {
     var element = document.getElementById("body");
     var el = document.getElementById("toggle");
-    console.log(element.classList)
     if(element.classList.contains('dark-mode') || el.classList.contains('bi-moon')){
         //change body to light mode
     element.classList.add('light-mode')
     element.classList.remove('dark-mode')
-    el.classList.add("bi-brightness-high");
-    el.classList.remove("bi-moon");
+    el.classList.add("bi-moon");
+    el.classList.remove("bi-brightness-high");
     }
     else {
         //change body to dark mode
         element.classList.add('dark-mode')
         element.classList.remove('light-mode')
-        el.classList.add("bi-moon");
-        el.classList.remove("bi-brightness-high");
+        el.classList.add("bi-brightness-high");
+        el.classList.remove("bi-moon");
     }
 }
