@@ -43,11 +43,11 @@ showTime();
 function toggleMode() {
     var element = document.getElementById("body");
     var el = document.getElementById("toggle");
-    if(element.classList.contains('dark-mode') || el.classList.contains('bi-moon')){
+    if(element.classList.contains('dark-mode')){
         //change body to light mode
     element.classList.add('light-mode')
     element.classList.remove('dark-mode')
-    el.classList.add("bi-moon");
+    el.classList.add("bi-moon-fill");
     el.classList.remove("bi-brightness-high");
     }
     else {
@@ -55,6 +55,6 @@ function toggleMode() {
         element.classList.add('dark-mode')
         element.classList.remove('light-mode')
         el.classList.add("bi-brightness-high");
-        el.classList.remove("bi-moon");
+        el.classList.remove("bi-moon-fill");
     }
 }

@@ -288,7 +288,7 @@ img {
   display: flex;
 }
 
-.bi-brightness-high, .bi-moon {
+.bi-brightness-high-fill, .bi-moon-fill {
   color: var(--highlight);
   padding: 0 2vw;
 }
