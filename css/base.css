@@ -333,6 +333,7 @@ button, button:hover, button:active, button:focus {
 
 .tabs {
   display: block;
+  width: fit-content;
   color: var(--color-text);
 }
 
@@ -344,4 +345,8 @@ button, button:hover, button:active, button:focus {
 
 .tabs h6:hover {
   color: var(--highlight);
+}
+
+.lead {
+  width: fit-content;
 }
