@@ -288,7 +288,7 @@ img {
   display: flex;
 }
 
-.bi-brightness-high-fill, .bi-moon-fill {
+.bi-brightness-high-fill, .bi-moon-fill, .bi-brightness-high {
   color: var(--highlight);
   padding: 0 2vw;
 }
@@ -349,4 +349,8 @@ button, button:hover, button:active, button:focus {
 
 .lead {
   width: fit-content;
+}
+
+.back {
+  padding: 2vh 2vw;
 }

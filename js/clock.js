@@ -48,13 +48,13 @@ function toggleMode() {
     element.classList.add('light-mode')
     element.classList.remove('dark-mode')
     el.classList.add("bi-moon-fill");
-    el.classList.remove("bi-brightness-high");
+    el.classList.remove("bi-brightness-high-fill");
     }
     else {
         //change body to dark mode
         element.classList.add('dark-mode')
         element.classList.remove('light-mode')
-        el.classList.add("bi-brightness-high");
+        el.classList.add("bi-brightness-high-fill");
         el.classList.remove("bi-moon-fill");
     }
 }
