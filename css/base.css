@@ -42,6 +42,10 @@ html, body
   background-color: var(--color-bg)
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--color-text);
+}
+
 
 body {
   font-family: Inter Tight, sans-serif;
@@ -353,4 +357,25 @@ button, button:hover, button:active, button:focus {
 
 .back {
   padding: 2vh 2vw;
+}
+
+.filler {
+  height: 30vh;
+}
+
+.col-md-4 {
+  padding: 2vh 2vw;
+}
+
+.card {
+  border: var(--highlight) 3px solid;
+  background-color: var(--color-bg);
+  border-radius: 20px;
+  color: var(--color-text);
+}
+
+.fa-brands {
+  padding: 2vh 2vw;
+  /* color: var(--highlight); */
+  font-size: 40px;
 }
