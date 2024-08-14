@@ -1,0 +1,25 @@
+*:root {
+    --color-bg: #fff;
+    --color-text: #000;
+    --highlight: #ff0000;
+}
+
+.dark {
+    --color-bg: #171717;
+    --color-text: #EDEDED;
+    --highlight: #ff0000;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.container-fluid {
+    border: #000;
+    border-width: 0.5px;
+    border-style: solid;
+    padding: 10px;
+    margin: 10px;
+}
