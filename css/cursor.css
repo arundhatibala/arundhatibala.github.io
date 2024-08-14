@@ -21,7 +21,9 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 1px solid var(--color-text);
+    /* border: 1px solid var(--highlight); */
+    background-color: #ff00006e;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
