@@ -27,77 +27,76 @@
     </header>
     <main class="content">
         <div class="button-container">
-            <button class="filter-button link" onclick="toggleActive(this)">DESIGN</button>
-            <button class="filter-button link" onclick="toggleActive(this)">DEVELOPMENT</button>
-            <button class="filter-button link" onclick="toggleActive(this)">DATA</button>
+            <button class="filter-button" onclick="toggleCategory(this, 'design')">DESIGN</button>
+            <button class="filter-button" onclick="toggleCategory(this, 'development')">DEVELOPMENT</button>
+            <button class="filter-button" onclick="toggleCategory(this, 'data')">DATA</button>
         </div>
-        
         <div class="grid-container">
-            <div class="grid-item">
+            <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">01</span>
                     <span class="title">Unconstitutional AI</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="development design">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">02</span>
                     <span class="title">Digital Yoknapatawpha</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="design">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">03</span>
                     <span class="title">Lume</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="design development">
                 <div class="rectangle"></div>
                 <div class="card-header">
-                    <span class="number">03</span>
+                    <span class="number">04</span>
                     <span class="title">Claude Nobs Experience</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="design data development">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">05</span>
                     <span class="title">Beyond The Lap</span>
                 </div>
             </div>
-            <div class="grid-item">
-                <div class="rectangle"></div>
-                <div class="card-header">
-                    <span class="number">05</span>
-                    <span class="title">Goodreads</span>
-                </div>
-            </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="design">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">06</span>
+                    <span class="title">Goodreads</span>
+                </div>
+            </div>
+            <div class="grid-item" data-category="data design development">
+                <div class="rectangle"></div>
+                <div class="card-header">
+                    <span class="number">07</span>
                     <span class="title">Partition Mapping</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
-                    <span class="number">07</span>
+                    <span class="number">08</span>
                     <span class="title">Living in a Material World</span>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
-                    <span class="number">07</span>
+                    <span class="number">09</span>
                     <span class="title">Finetuning MEDIAR</span>
                 </div>
             </div>
-            <!-- Add more grid items as needed -->
         </div>
+        
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="js/test2.js"></script>
