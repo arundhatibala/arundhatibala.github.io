@@ -4,18 +4,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+*:root{
+    --color-primary: black;
+    --color-secondary: white;
+}
+
+.dark-mode {
+    --color-primary: white;
+    --color-secondary: black;
+}
+
 html {
     scroll-behavior: smooth;
     cursor: none;
-    background-color: var(--color-bg);
+    height: 100%;
+    background-color: var(--color-secondary);
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: Inter, sans-serif;
-    background-color: white;
-    color: black;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 header {
@@ -35,42 +46,42 @@ a {
     align-items: center;
     text-align: center;
     padding: 8px 10px 10px 10px;
-    border: 1px solid black;
+    border: 1px solid var(--color-primary);
 }
 
 .logo a {
     font-size: 12px;
     /* padding-top: 10px; */
-    color: black;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .menu-button a {
     font-size: 12px;
-    /* background-color: black; */
-    color: black;
+    /* background-color: var(--color-primary); */
+    color: var(--color-primary);
     padding: 10px 0;
     text-decoration: none;
-    /* border: 1px solid black; */
+    /* border: 1px solid var(--color-primary); */
     transition: background-color 0.5s ease;
     cursor: none;
 }
 /* 
 .menu-button:hover a {
-    background-color: white;
-    color: black;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 } */
 
 .content {
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid var(--color-primary);
     margin: 0 20px;
 }
 
 .filter-button {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
     padding: 12px;
     text-align: center;
     font-size: 12px;
@@ -80,8 +91,8 @@ a {
 }
 
 .filter-button:hover, .filter-button.active {
-    background-color: black;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     cursor: none;
 
 }
@@ -96,17 +107,17 @@ a {
 }
 
 .grid-item {
-    background-color: white;
+    background-color: var(--color-secondary);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 1px solid var(--color-primary);
     padding: 10px;
 }
 
 .rectangle {
-    background-color: black;
+    background-color: var(--color-primary);
     width: 100%;
     padding-top: 50%; /* Maintain aspect ratio */
     margin-bottom: 5px;
@@ -151,8 +162,8 @@ a {
 
 .category {
     font-size: 12px;
-    color: black;
-    border: 1px solid black;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
     padding: 5px;
     text-align: center;
 }
@@ -188,19 +199,8 @@ footer .menu-button span {
     /* font-weight: bold; */
 }
 
-
-/* modes */
-
-.dark-mode {
-    background-color: black;
-    color: white;
-}
-
-.dark-mode a {
-    color: white;
-}
-
-.dark-mode footer {
-    background-color: black;
-    border-top: 1px solid white;
+div.menu-button.link {
+    text-decoration: none;
+    color: var(--color-primary);
+    padding: 0  0 0 10px;
 }

@@ -25,14 +25,15 @@
             </div>
         </nav>
     </header>
-    <main class = "content" style = "margin-bottom: 20px;">
+    <main class = "content" style = "margin-bottom: 20px; height: 1000px">
         <p>insert info about me here</p>
     </main>
+    <div class = "anchor" id = "work" style = "height:10px"></div>
     <main class="content">
         <div class="button-container">
-            <button class="filter-button" onclick="toggleCategory(this, 'design')">DESIGN</button>
-            <button class="filter-button" onclick="toggleCategory(this, 'development')">DEVELOPMENT</button>
-            <button class="filter-button" onclick="toggleCategory(this, 'data')">DATA</button>
+            <button class="filter-button link" onclick="toggleCategory(this, 'design')">DESIGN</button>
+            <button class="filter-button link" onclick="toggleCategory(this, 'development')">DEVELOPMENT</button>
+            <button class="filter-button link" onclick="toggleCategory(this, 'data')">DATA</button>
         </div>
         <div class="grid-container">
             <div class="grid-item" data-category="data">
@@ -100,16 +101,16 @@
             </div>
         </div>
     </main>
-    <header>
+    <footer>
         <nav class="navbar" style = "padding-top: 8px; padding-bottom: 8px;">
-            <div class="menu-button link">
+            <div class="menu-button">
                 <span id="clock"></span>
             </div>
             <div class="menu-button link">
                 <i id="toggleModeIcon" class="bi bi-moon-fill" onclick="toggleMode()"></i>
             </div>
         </nav>
-    </header>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="js/test2.js"></script>
     <script src = "js/cursor.js"></script>

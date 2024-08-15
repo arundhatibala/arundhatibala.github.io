@@ -18,11 +18,11 @@
 }
 
 .cursor--outer {
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     /* border: 1px solid var(--highlight); */
-    background-color: #ff00006e;
+    background-color: #ff0000b3;
     z-index: 10000;
     display: flex;
     align-items: center;
