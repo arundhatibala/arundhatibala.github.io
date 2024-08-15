@@ -44,3 +44,41 @@ function filterProjects() {
         }
     });
 }
+
+
+// clock functionality
+
+// Dark/Light Mode Toggle Function
+function toggleMode() {
+    const body = document.querySelector('body');
+    const icon = document.getElementById('toggleModeIcon');
+
+    // Toggle dark mode class on body
+    body.classList.toggle('dark-mode');
+
+    // Toggle between sun and moon icons
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('bi-moon-fill');
+        icon.classList.add('bi-sun-fill');
+    } else {
+        icon.classList.remove('bi-sun-fill');
+        icon.classList.add('bi-moon-fill');
+    }
+}
+
+// Function to update the clock
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Call updateClock every second to update the time
+setInterval(updateClock, 1000);
+
+// Initialize clock on page load
+updateClock();
