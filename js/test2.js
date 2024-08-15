@@ -37,13 +37,24 @@ function filterProjects() {
         // Show project if it matches all active categories
         if (activeCategories.length === 0 || activeCategories.every(cat => projectCategories.includes(cat))) {
             project.style.display = 'block';
-            console.log("Project shown:", project.querySelector('.title').textContent);
+            const titleElement = project.querySelector('.card-title');
+            if (titleElement) {
+                console.log("Project shown:", titleElement.textContent);
+            } else {
+                console.log("Project shown: No card-title element found");
+            }
         } else {
             project.style.display = 'none';
-            console.log("Project hidden:", project.querySelector('.title').textContent);
+            const titleElement = project.querySelector('.card-title');
+            if (titleElement) {
+                console.log("Project hidden:", titleElement.textContent);
+            } else {
+                console.log("Project hidden: No card-title element found");
+            }
         }
     });
 }
+
 
 
 // clock functionality
@@ -82,3 +93,22 @@ setInterval(updateClock, 1000);
 
 // Initialize clock on page load
 updateClock();
+
+
+const archiveItems = document.querySelectorAll('.archive-item');
+
+archiveItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        archiveItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.add('inactive');
+            }
+        });
+    });
+
+    item.addEventListener('mouseleave', () => {
+        archiveItems.forEach(otherItem => {
+            otherItem.classList.remove('inactive');
+        });
+    });
+});

@@ -50,3 +50,15 @@
     cursor: none; 
     transition: coloring 10s ease-in-out;
   }
+
+  /* Hide the custom cursor on mobile devices */
+@media (max-width: 767px) {
+  .cursor--outer, .cursor--inner {
+    display: none;
+  }
+
+  /* Disable the default pointer cursor on links */
+  a, .link {
+    cursor: default !important;
+  }
+}

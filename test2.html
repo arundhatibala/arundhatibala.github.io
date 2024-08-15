@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="css/test2.css">
     <link rel="stylesheet" href="css/cursor.css">
 </head>
-<body id = "body" class = "" >
+<body id="body" class="dark-mode">
     <div class="cursor cursor--outer"></div>
     <!-- <div class="cursor cursor--inner"></div> -->
-    <div class="header"> 
-      </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="header"></div>
 
     <header>
         <nav class="navbar">
@@ -22,104 +20,199 @@
             </div>
             <div class="menu-button link">
                 <a href="#work">WORK</a>
-                <a href = "#archives">ARCHIVES</a>
+                <a href="#archives">ARCHIVES</a>
             </div>
         </nav>
     </header>
-    <main class = "content" style = "height: 1000px">
-        <p>insert info about me here</p>
-    </main>
-    <div class = "anchor" id = "work" style = "height:20px"></div>
+
     <main class="content">
-        <div class = "section-title"><h1>WORK</h1></div>
+        <div class="section-title">
+            <h1>ABOUT</h1>
+        </div>
+        <h5>Hi, I'm Arundhati.</h5>
+        <!-- <img style = "width: 100%" src = "header.jpeg"></img> -->
+        <p>I'm an engineer, designer, and researcher. I'm currently a student assistant at The Laboratory of Cognitive Neuroscience (Bertarelli Chair in Cognitive Neuroprosthetics) and a master's student at the College of Digital Humanities at EPFL.
+        <br>
+
+        </p>
+    </main>
+
+    <div class="anchor" id="work" style="height:20px"></div>
+    <main class="content">
+        <div class="section-title">
+            <h1>WORK</h1>
+        </div>
         <div class="button-container">
             <button class="filter-button link" onclick="toggleCategory(this, 'design')">DESIGN</button>
             <button class="filter-button link" onclick="toggleCategory(this, 'development')">DEVELOPMENT</button>
             <button class="filter-button link" onclick="toggleCategory(this, 'data')">DATA</button>
         </div>
+
         <div class="grid-container">
             <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">01</span>
-                    <span class="title">Unconstitutional AI</span>
+                    <span class="card-title">Unconstitutional AI</span>
                 </div>
-            </div>
-            <div class="grid-item" data-category="development design">
-                <div class="rectangle"></div>
-                <div class="card-header">
-                    <span class="number">02</span>
-                    <span class="title">Digital Yoknapatawpha</span>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Report</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="design">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">03</span>
-                    <span class="title">Lume</span>
+                    <span class="card-title">Lume</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Prototype</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="design development">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">04</span>
-                    <span class="title">Claude Nobs Experience</span>
+                    <span class="card-title">Claude Nobs Experience</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Report</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="design data development">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">05</span>
-                    <span class="title">Beyond The Lap</span>
+                    <span class="card-title">Beyond The Lap</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Github</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="design">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">06</span>
-                    <span class="title">Goodreads</span>
+                    <span class="card-title">Goodreads</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Behance</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="data design development">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">07</span>
-                    <span class="title">Partition Mapping</span>
+                    <span class="card-title">Partition Mapping</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Github</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">08</span>
-                    <span class="title">Living in a Material World</span>
+                    <span class="card-title">Living in a Material World</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Report</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
             <div class="grid-item" data-category="data">
                 <div class="rectangle"></div>
                 <div class="card-header">
                     <span class="number">09</span>
-                    <span class="title">Finetuning MEDIAR</span>
+                    <span class="card-title">Finetuning MEDIAR</span>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <span>Report</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <div class = "anchor" id = "archives" style = "height:20px"></div>
-    <main class = "content" style = "margin-bottom: 20px; height: 1000px">
-        <div class = "section-title"><h1>ARCHIVES</h1></div>
-        <p>insert info about me here</p> 
+
+    <div class="anchor" id="archives" style="height:20px"></div>
+    <main class="content" style="margin-bottom: 20px;">
+        <div class="section-title">
+            <h1>ARCHIVES</h1>
+        </div>
+        <div class="archive-container">
+            <div class="archive-item">
+                <div class="title">NEIGHBOUR BAKER</div>
+                <div class="category">WEB DEVELOPMENT</div>
+                <div class="year">2023</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">EQUATIONS LLC</div>
+                <div class="category">WEB DEVELOPMENT</div>
+                <div class="year">2023</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">WOOF</div>
+                <div class="category">UI DESIGN</div>
+                <div class="year">2022</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">ASSORTED ALBUM COVERS</div>
+                <div class="category">GRAPHIC DESIGN</div>
+                <div class="year">2022</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">CAI</div>
+                <div class="category">UI DESIGN</div>
+                <div class="year">2021</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">SPOTIFY</div>
+                <div class="category">GRAPHIC DESIGN</div>
+                <div class="year">2021</div>
+            </div>
+            <div class="archive-item">
+                <div class="title">NETFLIX</div>
+                <div class="category">UI DESIGN</div>
+                <div class="year">2021</div>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <nav class="navbar" style = "padding-top: 8px; padding-bottom: 8px;">
+        <nav class="navbar" style="padding-top: 8px; padding-bottom: 8px;">
             <div class="menu-button">
                 <span id="clock"></span>
             </div>
             <div class="menu-button link">
-                <i id="toggleModeIcon" class="bi bi-moon-fill" onclick="toggleMode()"></i>
+                <i id="toggleModeIcon" class="bi bi-sun-fill" onclick="toggleMode()"></i>
             </div>
         </nav>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="js/test2.js"></script>
-    <script src = "js/cursor.js"></script>
+    <script src="js/cursor.js"></script>
 </body>
 </html>
