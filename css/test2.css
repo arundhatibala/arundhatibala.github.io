@@ -302,3 +302,20 @@ div.menu-button.link {
 img {
     padding: 10px 0;
 }
+
+.cursor--outer {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    /* border: 1px solid var(--highlight); */
+    background-color: rgba(255, 133, 39, 0.75);;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }

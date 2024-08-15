@@ -8,13 +8,13 @@
 .light-mode {
   --color-bg: #fff;
   --color-text: #000;
-  --highlight: #ff0000; 
+  --highlight: rgba(255, 132, 39, 0.765);; 
 }
 
 .dark-mode {
   --color-bg: #171717;
   --color-text: #EDEDED;
-  --highlight: #DA0037; 
+  --highlight: rgba(255, 133, 39, 0.765);; 
 }
 
 .cursor--outer {
