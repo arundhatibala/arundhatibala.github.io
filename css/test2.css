@@ -7,6 +7,7 @@
 *:root{
     --color-primary: #023E32;
     --color-secondary: white;
+    --color-highlight: rgba(255, 132, 3, 1);
 }
 
 .dark-mode {
@@ -98,6 +99,8 @@ a {
 }
 
 .grid-container {
+    position: relative;
+    z-index: 8;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-gap: 20px;
@@ -150,6 +153,9 @@ a {
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+    .half-col {
+        width: 100%;
     }
 }
 
@@ -255,6 +261,9 @@ div.menu-button.link {
     .year {
         align-self: flex-end;
     }
+    .half-col{
+        width: 100%;
+    }
 }
 
 
@@ -303,19 +312,59 @@ img {
     padding: 10px 0;
 }
 
-.cursor--outer {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    /* border: 1px solid var(--highlight); */
-    background-color: rgba(255, 133, 39, 0.75);;
-    z-index: 10000;
+
+h1 {
+    font-size: 60px;
+    font-weight: semi-bold;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 50px;
+    font-weight: semi-bold;
+    margin-bottom: 20px;
+}
+
+.half-col {
+    width: 50%;
+}
+
+.location {
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    position: fixed;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-  }
+    gap: 10px; /* Adjust the space between the circle and the text */
+    padding-bottom: 20px;
+
+}
+
+.emitting-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 132, 3, 1); /* Orange color */
+    box-shadow: 0 0 10px rgba(255, 132, 3, 0.8); /* Glow effect */
+    animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 132, 3, 0.8), 0 0 10px rgba(255, 132, 3, 0.6), 0 0 30px rgba(255, 132, 3, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 132, 3, 0.8), 0 0 30px rgba(255, 132, 3, 0.6), 0 0 35px rgba(255, 132, 3, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 132, 3, 0.8), 0 0 10px rgba(255, 132, 3, 0.6), 0 0 30px rgba(255, 132, 3, 0.4);
+    }
+}
+
+.location-text {
+    /* font-family: Arial, sans-serif; */
+    font-size: 20px;
+    color: rgba(255, 132, 3, 1); /* Same orange color for the text */
+}
+
+.p-links {
+    text-decoration: none; 
+    color:  rgba(255, 132, 3, 1);
+}
+

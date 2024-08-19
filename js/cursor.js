@@ -4,7 +4,7 @@ var clientX = -300,
 var linkList = []
 // elements 
 var outerCursor = document.querySelector(".cursor--outer");
-// var innerCursor = document.querySelector(".cursor--inner");
+var innerCursor = document.querySelector(".cursor--inner");
 
 function generateLinks() {
   linkList = document.getElementsByClassName("link");
@@ -24,14 +24,14 @@ var initCursor = function() {
       TweenMax.set(outerCursor, {
         x: clientX,
         y: clientY,
-        delay: .08,
+        delay: .05,
         ease: Power1.easeOut
       });
 
-      // TweenMax.set(innerCursor, {
-      //   x: clientX,
-      //   y: clientY
-      // });
+      TweenMax.set(innerCursor, {
+        x: clientX,
+        y: clientY
+      });
 
       requestAnimationFrame(render);
     };
@@ -40,7 +40,7 @@ var initCursor = function() {
   } else {
     // Hide the custom cursor if on a smaller screen
     outerCursor.style.display = "none";
-    // innerCursor.style.display = "none";
+    innerCursor.style.display = "none";
     document.body.style.cursor = "default"; // Make sure the default cursor shows up
   }
 };
