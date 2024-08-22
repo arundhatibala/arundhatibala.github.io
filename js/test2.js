@@ -112,3 +112,27 @@ archiveItems.forEach(item => {
         });
     });
 });
+
+
+ // Slideshow logic
+ let currentSlide = 0;
+ const slides = document.querySelectorAll('.slide');
+
+ function showSlide(index) {
+     slides.forEach((slide, i) => {
+         slide.classList.toggle('active-slide', i === index);
+     });
+ }
+
+ function nextSlide() {
+     currentSlide = (currentSlide + 1) % slides.length;
+     showSlide(currentSlide);
+ }
+
+ setInterval(nextSlide, 3000); // Change slides every 3 seconds
+
+ // Simple Venn Diagram Animation
+ document.addEventListener('DOMContentLoaded', () => {
+     const vennDiagram = document.getElementById("venn-diagram");
+     vennDiagram.classList.add("venn-animate");
+ });

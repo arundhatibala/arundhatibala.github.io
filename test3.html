@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Distortion with WebGL</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            position: fixed;
+            z-index: -1;
+            left: 0;
+            top: 0;
+        }
+
+        .item {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2, p {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <img src="mugshot.jpeg" class="js-image" alt="">
+        <h2>Some Title</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <script type="module">
+        import * as THREE from "https://cdn.skypack.dev/three@0.128";
+        import { EffectComposer } from "https://cdn.skypack.dev/three/examples/jsm/postprocessing/EffectComposer.js";
+        import { RenderPass } from "https://cdn.skypack.dev/three/examples/jsm/postprocessing/RenderPass.js";
+        import { ShaderPass } from "https://cdn.skypack.dev/three/examples/jsm/postprocessing/ShaderPass.js";
+        import { PlaneGeometry, MeshBasicMaterial, Mesh } from "https://cdn.skypack.dev/three";
+
+        let scene, camera, renderer, composer, customPass;
+        let textureLoader = new THREE.TextureLoader();
+        let images = [...document.querySelectorAll('.js-image')];
+        
+        function init() {
+            // Set up scene, camera, and renderer
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+            
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // Load texture and create mesh
+            let TEXTURE = textureLoader.load('img.jpg');
+            let geometry = new PlaneGeometry(5, 5);
+            let material = new MeshBasicMaterial({ map: TEXTURE });
+            let mesh = new Mesh(geometry, material);
+            scene.add(mesh);
+
+            // Create post-processing composer and passes
+            composer = new EffectComposer(renderer);
+            let renderPass = new RenderPass(scene, camera);
+            composer.addPass(renderPass);
+
+            // Custom shader pass
+            let fragmentShader = 
+                uniform sampler2D tDiffuse;
+                uniform vec2 uMouse;
+                uniform float uTime;
+                varying vec2 vUv;
+                void main() {
+                    vec2 uv = vUv;
+                    vec2 mouseDistortion = vec2(sin(uv.x * 10.0 + uMouse.x * 5.0) * 0.05, 
+                                                cos(uv.y * 10.0 + uMouse.y * 5.0) * 0.05);
+                    vec2 distortedUv = uv + mouseDistortion;
+                    gl_FragColor = texture2D(tDiffuse, distortedUv);
+                }
+            ;
+
+            let vertexShader = `
+                varying vec2 vUv;
+                void main() {
+                    vUv = uv;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `;
+
+            customPass = new ShaderPass({
+                uniforms: {
+                    tDiffuse: { value: null },
+                    uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+                    uTime: { value: 0 }
+                },
+                vertexShader: vertexShader,
+                fragmentShader: fragmentShader,
+            });
+
+            customPass.renderToScreen = true;
+            composer.addPass(customPass);
+
+            // Add event listeners for mouse movement
+            document.addEventListener('mousemove', onMouseMove);
+        }
+
+        function onMouseMove(event) {
+            const mouseX = (event.clientX / window.innerWidth) - 0.5;
+            const mouseY = (event.clientY / window.innerHeight) - 0.5;
+            customPass.uniforms.uMouse.value.set(mouseX * 2.0, mouseY * 2.0);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            customPass.uniforms.uTime.value += 0.05;
+            composer.render();
+        }
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
