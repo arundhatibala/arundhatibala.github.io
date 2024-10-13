@@ -119,12 +119,21 @@ a {
     padding: 10px;
 }
 
+/* .rectangle {
+    background-color: var(--color-primary);
+    width: 100%;
+    padding-top: 50%; /* Maintain aspect ratio */
+
+
 .rectangle {
     background-color: var(--color-primary);
+    background-size: cover;
+    background-position: center;
     width: 100%;
     padding-top: 50%; /* Maintain aspect ratio */
     margin-bottom: 5px;
 }
+
 
 .card-header {
     display: flex;
@@ -485,3 +494,10 @@ footer .social-links a {
     font-family: Inter, sans-serif;
     width: 50%;
 }
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    /* cursor: none; */
+}
+
