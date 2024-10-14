@@ -100,7 +100,7 @@ a {
 
 .grid-container {
     position: relative;
-    z-index: 8;
+    z-index: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-gap: 20px;
@@ -112,6 +112,7 @@ a {
 .grid-item {
     background-color: var(--color-secondary);
     display: flex;
+    z-index: 0;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -157,8 +158,22 @@ a {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
+
+    /* Make the about text take half the screen width on medium screens */
     .about-text {
-        width: 50%;
+        width: 100%;
+        font-size: 16px; /* Adjust font size for medium screens */
+        margin: 0 auto; /* Center the text */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust the about text for smaller tablet screens */
+    .about-text {
+        width: 90%; /* Reduce the width slightly for smaller screens */
+        font-size: 14px; /* Smaller font size for tablet-sized screens */
+        line-height: 1.5; /* Improve readability */
+        margin: 0 auto; /* Center the text */
     }
 }
 
@@ -166,10 +181,26 @@ a {
     .grid-container {
         grid-template-columns: 1fr; /* 1 column for small screens */
     }
+
+    /* Make the about text take full width on small screens */
     .about-text {
         width: 100%;
+        font-size: 14px; /* Adjust font size for small screens */
+        line-height: 1.6;
+        margin: 0 10px; /* Add some padding to the sides */
     }
 }
+
+@media (max-width: 400px) {
+    /* Extra small screens (e.g. phones in portrait mode) */
+    .about-text {
+        width: 100%;
+        font-size: 13px; /* Make text smaller for extra small screens */
+        line-height: 1.4;
+        margin: 0 5px; /* Reduce the side margins for very small screens */
+    }
+}
+
 
 /* footer */
 
