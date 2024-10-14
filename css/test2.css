@@ -157,13 +157,16 @@ a {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
+    .about-text {
+        width: 50%;
+    }
 }
 
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr; /* 1 column for small screens */
     }
-    .half-col {
+    .about-text {
         width: 100%;
     }
 }
@@ -332,10 +335,10 @@ h2 {
     font-weight: semi-bold;
     margin-bottom: 20px;
 }
-
+/* 
 .half-col {
     width: 50%;
-}
+} */
 
 .location {
     display: flex;
@@ -456,12 +459,6 @@ footer .social-links a {
             flex-wrap: wrap;
         }
 
-        .half-col {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
         #slideshow-container {
             flex: 1;
             padding: 20px;
@@ -492,12 +489,43 @@ footer .social-links a {
 .about-text {
     font-size: 12px;
     font-family: Inter, sans-serif;
-    width: 50%;
+    /* width: 50%; */
 }
 
 a {
     color: var(--color-primary);
     text-decoration: none;
     /* cursor: none; */
+}
+
+
+/* Style for the small button */
+.updates-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 132, 3, 1);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.updateBtn {
+    background-color: rgba(255, 132, 3, 1);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
