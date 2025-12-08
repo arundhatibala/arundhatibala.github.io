@@ -560,3 +560,47 @@ a {
     align-items: center;
 }
 
+
+/* ------------------------------------------- */
+/* CSS for Circular Mugshot and Height Matching */
+/* ------------------------------------------- */
+
+/* 1. The JavaScript approach below is the most reliable way 
+     to match height precisely, but this CSS sets up the structure. 
+*/
+
+.about-content-row {
+    /* Ensures the columns inside take up the full available height */
+    align-items: stretch; 
+}
+
+.about-image-wrapper {
+    /* Use a fixed aspect ratio container for the circle */
+    position: relative;
+    width: 100%; /* Default to 100% of the column width */
+    padding-top: 100%; /* Creates a 1:1 aspect ratio container for the circle */
+    max-width: 400px; /* Optional: Limit the maximum size of the circle */
+}
+
+.mugshot-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Key properties for circular image and clean cropping */
+    /* border-radius: 50%; Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+/* On medium screens and up, adjust the image wrapper to 
+   match the text block height (relies on JS below) */
+@media (min-width: 768px) {
+    .about-image-wrapper {
+        /* Set these to be controlled by JS for height matching */
+        width: var(--image-size, 300px); 
+        height: var(--image-size, 300px);
+        padding-top: 0; /* Remove 1:1 padding-top when height is set by JS */
+    }
+}
