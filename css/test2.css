@@ -599,8 +599,8 @@ a {
 @media (min-width: 768px) {
     .about-image-wrapper {
         /* Set these to be controlled by JS for height matching */
-        width: var(--image-size, 300px); 
-        height: var(--image-size, 300px);
+        /* width: var(--image-size, 300px); 
+        height: var(--image-size, 300px); */
         padding-top: 0; /* Remove 1:1 padding-top when height is set by JS */
     }
 }
