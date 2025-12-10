@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Simulation</title>
+    <style>
+        /* Basic Reset and Desktop Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .desktop {
+            /* Desktop Background */
+            background-image: url('img/bg.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #2e5984; 
+
+            width: 100vw;
+            height: 100vh;
+            display: flex; 
+            padding: 20px;
+            box-sizing: border-box;
+            gap: 40px; 
+            flex-direction: column; 
+            align-items: flex-end; 
+        }
+
+        /* Individual Icon Styling (Container) */
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 100px; /* Increased icon container width */
+            text-align: center;
+            user-select: none;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Folder Image Styling: Larger size, using external image img/folder.png */
+        .folder-image {
+            width: 80px;
+            height: 80px; 
+            background-image: url('img/folder.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .file-image {
+            width: 80px;
+            height: 80px; 
+            background-image: url('img/page.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Icon Label Styling */
+        .label {
+            margin-top: 5px;
+            color: white; /* Changed color to white for better contrast on images */
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 14px; /* Slightly larger text */
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Simple hover effect to mimic selection/focus */
+        .icon:hover .label {
+            background-color: #007aff; 
+            color: white;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Active/Click effect */
+        .icon:active {
+            transform: scale(0.98);
+        }
+
+        /* --- Window/Modal Styles --- */
+
+        .window-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it's above everything else */
+            background-color: rgba(0, 0, 0, 0.2); /* Slight transparent overlay */
+        }
+
+        .window {
+            background: white;
+            border: 1px solid #aaa;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 500px; /* Slightly wider popup for the text content */
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .title-bar {
+            background-color: #e0e0e0;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: default;
+        }
+
+        .close-button {
+            background: #ff605c;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+
+        .close-button:hover {
+            background: #e0524f;
+        }
+
+        .window-content {
+            padding: 15px;
+            flex-grow: 1;
+            overflow-y: auto; /* Scrollable content */
+            background-color: #fff;
+            white-space: pre-wrap; /* Crucial: Preserve text formatting like line breaks */
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for text file */
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <div class="icon about" onclick="openWindow('about.txt', 
+                `Hi, I'm Arundhati.
+                
+                I'm an engineer by training, a designer by passion, and a researcher driven by curiosity.
+                
+                I completed my Master’s coursework at EPFL’s College of Digital Humanities, and I’m now finishing my Master’s thesis at ETH Zurich on Evaluating Reversibility and Semantic Drift in the Low-Resource Round-Trip-Translations, in collaboration with the IVIA Lab.
+                
+                I’ve previously worked at Effixis as an LLM Engineer Intern, where I built production-grade data-visualization tools and RAG systems for industry teams, and at Google London as a Software Engineering Intern, where I developed reusable chart components for the Fitbit app.
+                
+                My research experience spans the Digital and Cognitive Musicology Lab (EPFL), The Laboratory of Cognitive Neuroscience (EPFL), and the University of Virginia, contributing to projects ranging from microscopy segmentation to interactive platform and visualization design.
+                `);">
+            <div class="file-image"></div>
+            <span class="label">about.txt</span>
+        </div>
+<div class="icon resume" onclick="downloadFile('Arundhati_Resume.pdf', 'ArundhatiBALA_2026_FTR.pdf');">
+            <div class="file-image"></div>
+            <span class="label">resume.pdf</span>
+        </div>
+        
+        <div class="icon work" onclick="alert('You clicked the Work folder!');">
+            <div class="folder-image"></div>
+            <span class="label">Work</span>
+        </div>
+        <div class="icon archives" onclick="alert('You clicked the Archives folder!');">
+            <div class="folder-image"></div>
+            <span class="label">Archives</span>
+        </div>
+    </div>
+
+    <div id="fileWindowContainer" class="window-container">
+        <div class="window">
+            <div class="title-bar">
+                <span id="windowTitle"></span>
+                <button class="close-button" onclick="closeWindow()"></button>
+            </div>
+            <div id="windowContent" class="window-content">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function openWindow(title, content) {
+            document.getElementById('windowTitle').textContent = title;
+            // The content is set using textContent to prevent the links/HTML tags from being rendered,
+            // making it look like a plain text file, as requested.
+            document.getElementById('windowContent').textContent = content; 
+            document.getElementById('fileWindowContainer').style.display = 'flex'; // Show the window container
+        }
+
+        function closeWindow() {
+            document.getElementById('fileWindowContainer').style.display = 'none'; // Hide the window container
+        }
+        function downloadFile(filename, filePath) {
+            // Check if the file path is set correctly
+            if (!filePath || filePath.includes('path/to/your/')) {
+                 alert("Download failed: Please update the JavaScript code with the correct path to your PDF file.");
+                 return;
+            }
+
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = filename; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
