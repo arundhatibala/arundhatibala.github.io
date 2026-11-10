@@ -1242,3 +1242,25 @@ footer .social-links a:hover {
 .grid-item:hover {
     background-image: none;
 }
+
+/* keep the name above the about section so it can be hovered and clicked */
+header {
+    position: relative;
+    z-index: 5;
+}
+
+/* "Hi, I'm Arundhati." shows the photo on hover, with the same marker as every link */
+.hover-photo {
+    background-image: linear-gradient(transparent 40%, transparent 40%);
+    background-repeat: no-repeat;
+}
+
+.hover-photo:hover {
+    background-image: linear-gradient(transparent 40%, var(--marker) 40%);
+}
+
+/* portrait preview for the photo */
+.project-preview.portrait {
+    width: 12rem;
+    height: 16rem;
+}
