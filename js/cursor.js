@@ -67,36 +67,3 @@ growOnHover();
 //   // Reinitialize cursor behavior based on new screen size
 //   initCursor();
 // });
-
-function matchImageToTextHeight() {
-    const textContent = document.getElementById('about-text-content');
-    const imageWrapper = document.querySelector('.about-image-wrapper');
-    const screenWidth = window.innerWidth;
-    
-    // Check if both elements exist
-    if (!textContent || !imageWrapper) {
-        return;
-    }
-
-    // Use height matching only on screens larger than mobile (>= 768px for Bootstrap 'md')
-    if (screenWidth >= 768) {
-        // 1. Get the computed height of the text content block
-        const textHeight = textContent.offsetHeight;
-
-        // 2. Set the image wrapper to be a square matching the text height
-        imageWrapper.style.width = `${textHeight}px`;
-        imageWrapper.style.height = `${textHeight}px`;
-        imageWrapper.style.paddingTop = '0'; // Ensure custom sizing is used
-
-    } else {
-        // On mobile/smaller screens: Switch back to a responsive, width-based circle.
-        // The container's width will shrink with the column, and padding-top makes it a square.
-        imageWrapper.style.width = '100%'; 
-        imageWrapper.style.height = 'auto'; // Reverts to flexible height
-        imageWrapper.style.paddingTop = '100%'; // Forces a 1:1 aspect ratio square
-    }
-}
-
-// Ensure the function runs on load and resize
-window.addEventListener('load', matchImageToTextHeight);
-window.addEventListener('resize', matchImageToTextHeight);

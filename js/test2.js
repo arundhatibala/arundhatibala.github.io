@@ -36,7 +36,7 @@ function filterProjects() {
 
         // Show project if it matches all active categories
         if (activeCategories.length === 0 || activeCategories.every(cat => projectCategories.includes(cat))) {
-            project.style.display = 'block';
+            project.style.display = '';
             const titleElement = project.querySelector('.card-title');
             if (titleElement) {
                 console.log("Project shown:", titleElement.textContent);
